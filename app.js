@@ -20,8 +20,8 @@ app.use(cookieParser());
 app.use(compression());
 //用户token验证
 app.use(checkToken());
-//静态文件，并配置缓存时间,etag:文件的hash值来判断文件是否改变，用来
-app.use(express.static(path.join(__dirname, 'public'),{maxAge:60*60*1000}));
+//静态文件，并配置缓存时间,etag:文件的hash值来判断文件是否改变，用来{ maxAge:60*60*1000}
+app.use(express.static(path.join(__dirname, 'public')));
 
 //首页仪表盘
 app.use('/index', require('./routes/index'));
