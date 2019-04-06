@@ -28,6 +28,7 @@
 	<link rel="stylesheet" href="css/dashboard.css" />
 	<link rel="stylesheet" href="http:////at.alicdn.com/t/font_1121957_bglxz024wu.css" />
 	<link rel="stylesheet" href="css/daterangepicker.min.css" />
+	<link rel="stylesheet" href="css/order.css">
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -88,7 +89,7 @@
 				<nav class="sidebar-nav">
 					<ul id="sidebarnav">
 						<li id="page1">
-							<a href="javascript:;" class="waves-effect"><i class="fa fa-clock-o m-r-10"
+							<a href="/index.html" class="waves-effect"><i class="fa fa-clock-o m-r-10"
 									aria-hidden="true"></i>首页</a>
 						</li>
 
@@ -113,7 +114,7 @@
 							<p class="sub_sidebarnav2b"><a href="###">添加商品</a></p>
 						</div>
 						<li id="orders">
-							<a href="/order.html" class="waves-effect"><i class="fa fa-font m-r-10"
+							<a href="javascript:;" class="waves-effect"><i class="fa fa-font m-r-10"
 									aria-hidden="true"></i>订单管理</a>
 						</li>
 					</ul>
@@ -127,101 +128,69 @@
 		</aside>
 
 		<div class="page-wrapper">
-			<!-- 首页 -->
-			<div class="container-fluid dashboard" style="display: block;">
-				<div class="tool-bar shadow">
-					<p>数据统计</p>
-					<div class="filter clearfix">
-						<div class="filter-day fl">
-							<a href="javascript:;" class="active">今天</a>
-							<a href="javascript:;">昨天</a>
-							<a href="javascript:;">最近7天</a>
-							<a href="javascript:;">最近30天</a>
-						</div>
-						<div class="dur fr">
-							<div class="time fl">
-								<span>筛选时间：</span>
-								<input type="text" id="date-picker"></input>
-							</div>
-							<div class="btn fr">
-								<a href="javascript:;" id="search">查找</a>
-							</div>
-						</div>
+			<!-- 订单管理 -->
+			<div class="container-fluid orders">
+				<div class="title clearfix">
+					<div class="upload fl">
+						<input type="button" id="btn" value="导入">
+						<input type="file" id="file">
+					</div>
+					<div class="download fr">
+						导出
 					</div>
 				</div>
-				<div class="statistics">
-					<div class="pannel-simple">
-						<!-- <div class="pannel-item ">
-							<em>24</em>
-							<span>访客人数</span>
-						</div>
-						<div class="pannel-item">
-							<em>38</em>
-							<span>访客次数</span>
-						</div>
-						<div class="pannel-item">
-							<em>24</em>
-							<span>下单人数</span>
-						</div>
-						<div class="pannel-item">
-							<em>24</em>
-							<span>确认订单数</span>
-						</div>
-						<div class="pannel-item">
-							<em>24</em>
-							<span>支付人数</span>
-						</div>
-						<div class="pannel-item">
-							<em>24</em>
-							<span>成教订单数</span>
-						</div> -->
-					</div>
-					<div class="pannel-bigger">
-						<!-- <div class="pannel-item" style="background:#F9B224">
-							<p><span>￥</span><em>2345</em></p>
-							<span>下单金额</span>
-						</div>
-						<div class="pannel-item" style="background:#896ED7">
-							<p><span>￥</span><em>2345</em></p>
-							<span>成交金额</span>
-						</div>
-						<div class="pannel-item" style="background:#33C6CD">
-							<p><span>￥</span><em>2345</em></p>
-							<span>客单价</span>
-						</div> -->
-					</div>
-					<div class="charts">
-						<div class="cha-title">
-							<span>成交数据</span>
-						</div>
-						<div class="charts-content">
-							<div id="charts-main" style="width: 100%;height:360px;"></div>
-							<script>
-
-							</script>
-						</div>
-					</div>
+				<div class="tabel">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>订单状态</th>
+								<th>订单编号</th>
+								<th>下单时间</th>
+								<th>收货人</th>
+								<th>联系电话</th>
+								<th>支付方式</th>
+								<th>物流状态</th>
+								<th>订单金额</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>已完成</td>
+								<td>1111</td>
+								<td>2018-03-18</td>
+								<td>阿三</td>
+								<td>1814564651</td>
+								<td>微信支付</td>
+								<td>已签收</td>
+								<td>119.50</td>
+							</tr>
+							<tr>
+								<td>已完成</td>
+								<td>1112</td>
+								<td>2018-03-18</td>
+								<td>阿三</td>
+								<td>1814564651</td>
+								<td>微信支付</td>
+								<td>已签收</td>
+								<td>119.50</td>
+							</tr>
+							<tr>
+								<td>已完成</td>
+								<td>1112</td>
+								<td>2018-03-18</td>
+								<td>阿三</td>
+								<td>1814564651</td>
+								<td>微信支付</td>
+								<td>已签收</td>
+								<td>119.50</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
-
-			<!-- 订单管理 -->
-		
 		</div>
 	</div>
-
-
 	<script src="assets/plugins/jquery/jquery.min.js"></script>
-
-	<!-- 补充的特效 -->
-	<script src="js/add.js"></script>
-	
-	<!-- 首页的特效 -->
-	<script src="js/moment.min.js"></script>
-	<script src="js/jquery.daterangepicker.js"></script>
-	<script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
-	<script src="js/index.js"></script>
-	<!-- 订单页 -->
 	<script src="js/order.js"></script>
 </body>
-
 </html>
