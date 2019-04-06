@@ -1,0 +1,35 @@
+.orders {
+    .title {
+        height: 30px;
+        margin-bottom: 30px;
+
+        .upload {
+            #btn {
+                margin-left: 10px;
+                width: 100px;
+                height: 30px;
+                background-color: #FC8C0E;
+                text-align: center;
+                line-height: 30px;
+                color: #fff;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+
+            #file {
+                width: 200px;
+            }
+        }
+
+        .download {
+            margin-left: 10px;
+            width: 100px;
+            background-color: #FC8C0E;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    }
+}
