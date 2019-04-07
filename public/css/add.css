@@ -1,13 +1,13 @@
 .page-wrapper{
     position: relative;
 }
-.container-fluid1,.container-fluid2t,.container-fluid2b,.container-fluid3t,.container-fluid3b,.container-fluid4{
-    width: 1000px;
+.container-fluid1,.container-fluid2{
+    max-width: 1200px;
     overflow:hidden;
-    display: none;
-    position:absolute;
+    /* display: none; */
+    /* position:absolute;
     top: 0;
-    left: 0;
+    left: 0; */
 }
 
 .sub_sidebarnav1,.sub_sidebarnav2{
@@ -21,3 +21,8 @@
    font-size: 14px;
    color:#54667a;
 }
+.row{
+    padding-left: 20px;
+    /* z-index: 1; */
+}
+

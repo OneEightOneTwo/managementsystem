@@ -18,6 +18,11 @@
     <!-- You can change the theme colors from here -->
     <link href="css/colors/blue.css" id="theme" rel="stylesheet">
     <link rel="stylesheet" href="css/add.css">
+    <!-- 引用layui -->
+    <link rel="stylesheet" href="assets/plugins/layui/css/layui.css" media="all">
+    <script src="assets/plugins/layui/layui.js"></script>
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <script src="js/products.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,10 +31,9 @@
 <![endif]-->
 </head>
 
+
 <body class="fix-header fix-sidebar card-no-border">
-    <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
             <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
@@ -88,7 +92,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user"
-                                    class="profile-pic m-r-5" />Markarn Doe</a>
+                                    class="profile-pic m-r-5" />Markarn
+                                Doe</a>
                         </li>
                     </ul>
                 </div>
@@ -117,8 +122,8 @@
                         <!-- 下拉菜单 用户 -> 网站用户  + 后台管理员 -->
 
                         <div class="sub_sidebarnav1">
-                            <p class="sub_sidebarnav1t"><a href="###">网站用户</a></p>
-                            <p class="sub_sidebarnav1b"><a href="###">后台管理员</a></p>
+                            <p class="sub_sidebarnav1t"><a href="users.html">网站用户</a></p>
+                            <p class="sub_sidebarnav1b"><a href="manager.html">后台管理员</a></p>
                         </div>
 
                         <li id="products">
@@ -126,8 +131,8 @@
                         </li>
                         <!-- 商品  -> 商品列表 + 添加商品 -->
                         <div class="sub_sidebarnav2">
-                            <p class="sub_sidebarnav2t"><a href="###">商品列表</a></p>
-                            <p class="sub_sidebarnav2b"><a href="###">添加商品</a></p>
+                            <p class="sub_sidebarnav2t"><a href="product.html">商品列表</a></p>
+                            <p class="sub_sidebarnav2b"><a href="addgoods.html">添加商品</a></p>
                         </div>
                         <li id="orders">
                             <a href="###" class="waves-effect"><i class="fa fa-font m-r-10" aria-hidden="true"></i>订单管理</a>
@@ -152,7 +157,7 @@
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- 首页 -->
-            <div class="container-fluid1" style="display: block;">
+            <div class="container-fluid1">
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
@@ -181,313 +186,6 @@
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
             </div>
-            <!-- 用户 -> 网站用户  + 后台管理员 -->
-            <div class="container-fluid2t">
-                <!-- ============================================================== -->
-                <!-- Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <div class="row page-titles">
-                    <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">网站用户</h3>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                    </div>
-                    <div class="col-md-6 col-4 align-self-center">
-                        <a href="#" class="btn pull-right hidden-sm-down btn-success">Download Here</a>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <!-- Row -->
-                <div class="row">
-                    <!-- Column -->
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-block">
-                                <h4 class="card-title">Daily Sales</h4>
-                                <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-success"></i> $120</h2>
-                                    <span class="text-muted">Todays Income</span>
-                                </div>
-                                <span class="text-success">80%</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%; height: 6px;"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-block">
-                                <h4 class="card-title">Weekly Sales</h4>
-                                <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> $5,000</h2>
-                                    <span class="text-muted">Todays Income</span>
-                                </div>
-                                <span class="text-info">30%</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 30%; height: 6px;"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                </div>
-            </div>
-            <div class="container-fluid2b">
-                <!-- ============================================================== -->
-                <!-- Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <div class="row page-titles">
-                    <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">后台管理员</h3>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                    </div>
-                    <div class="col-md-6 col-4 align-self-center">
-                        <a href="#" class="btn pull-right hidden-sm-down btn-success">Download Here</a>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <!-- Row -->
-                <div class="row">
-                    <!-- Column -->
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-block">
-                                <h4 class="card-title">Daily Sales</h4>
-                                <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-success"></i> $120</h2>
-                                    <span class="text-muted">Todays Income</span>
-                                </div>
-                                <span class="text-success">80%</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%; height: 6px;"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-block">
-                                <h4 class="card-title">Weekly Sales</h4>
-                                <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> $5,000</h2>
-                                    <span class="text-muted">Todays Income</span>
-                                </div>
-                                <span class="text-info">30%</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 30%; height: 6px;"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                </div>
-            </div>
-
-            <!-- 商品  -> 商品列表 + 添加商品 -->
-            <div class="container-fluid3t">
-                <div class="row page-titles">
-                    <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">商品列表</h3>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                    </div>
-                    <div class="col-md-6 col-4 align-self-center">
-                        <a href="#" class="btn pull-right hidden-sm-down btn-success">Download Here</a>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <!-- Row -->
-                <div class="row">
-                    <!-- Column -->
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-block">
-                                <h4 class="card-title">Daily Sales</h4>
-                                <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-success"></i> $120</h2>
-                                    <span class="text-muted">Todays Income</span>
-                                </div>
-                                <span class="text-success">80%</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%; height: 6px;"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-block">
-                                <h4 class="card-title">Weekly Sales</h4>
-                                <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> $5,000</h2>
-                                    <span class="text-muted">Todays Income</span>
-                                </div>
-                                <span class="text-info">30%</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 30%; height: 6px;"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                </div>
-            </div>
-            <div class="container-fluid3b">
-                <div class="row page-titles">
-                    <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">添加商品</h3>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                    </div>
-                    <div class="col-md-6 col-4 align-self-center">
-                        <a href="#" class="btn pull-right hidden-sm-down btn-success">Download Here</a>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <!-- Row -->
-                <div class="row">
-                    <!-- Column -->
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-block">
-                                <h4 class="card-title">Daily Sales</h4>
-                                <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-success"></i> $120</h2>
-                                    <span class="text-muted">Todays Income</span>
-                                </div>
-                                <span class="text-success">80%</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%; height: 6px;"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-block">
-                                <h4 class="card-title">Weekly Sales</h4>
-                                <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> $5,000</h2>
-                                    <span class="text-muted">Todays Income</span>
-                                </div>
-                                <span class="text-info">30%</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 30%; height: 6px;"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                </div>
-            </div>
-
-
-            <div class="container-fluid4">
-                <div class="row page-titles">
-                    <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="text-themecolor m-b-0 m-t-0">订单管理</h3>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                    </div>
-                    <div class="col-md-6 col-4 align-self-center">
-                        <a href="#" class="btn pull-right hidden-sm-down btn-success">Download Here</a>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Bread crumb and right sidebar toggle -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <!-- Row -->
-                <div class="row">
-                    <!-- Column -->
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-block">
-                                <h4 class="card-title">Daily Sales</h4>
-                                <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-success"></i> $120</h2>
-                                    <span class="text-muted">Todays Income</span>
-                                </div>
-                                <span class="text-success">80%</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%; height: 6px;"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-block">
-                                <h4 class="card-title">Weekly Sales</h4>
-                                <div class="text-right">
-                                    <h2 class="font-light m-b-0"><i class="ti-arrow-up text-info"></i> $5,000</h2>
-                                    <span class="text-muted">Todays Income</span>
-                                </div>
-                                <span class="text-info">30%</span>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 30%; height: 6px;"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                </div>
-            </div>
-
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
