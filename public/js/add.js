@@ -12,7 +12,7 @@ $(function () {
                 .css('display', 'none');
         });
     }
-    show('#page1', '.container-fluid1');
+    show('#page1', '.container-fluid');
     show('.sub_sidebarnav1t', '.container-fluid2t');
     show('.sub_sidebarnav1b', '.container-fluid2b');
     show('.sub_sidebarnav2t', '.container-fluid3t');

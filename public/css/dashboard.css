@@ -1,0 +1,138 @@
+.dashboard {
+  padding: 25px;
+}
+
+.dashboard .shadow, .dashboard .statistics .pannel-simple .pannel-item, .dashboard .statistics .pannel-bigger .pannel-item, .dashboard .statistics .charts {
+  border-radius: 5px;
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard .tool-bar {
+  padding: 0 25px;
+  background-color: #fff;
+}
+
+.dashboard .tool-bar > p {
+  height: 38px;
+  line-height: 38px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0px;
+}
+
+.dashboard .tool-bar .filter {
+  line-height: 38px;
+}
+
+.dashboard .tool-bar .filter a {
+  display: inline-block;
+  padding: 4px 12px;
+  line-height: 1;
+  text-decoration: none;
+  color: #3a3a3a;
+}
+
+.dashboard .tool-bar .filter .filter-day .active {
+  background-color: #FC8C0E;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.dashboard .tool-bar .filter .dur .time > span {
+  margin-right: 10px;
+}
+
+.dashboard .tool-bar .filter .dur .time > input {
+  width: 200px;
+  height: 20px;
+  line-height: 20px;
+  border: 1px solid #9a9a9a;
+}
+
+.dashboard .tool-bar .filter .dur > i {
+  display: inline-block;
+  height: 1px;
+  width: 7px;
+  background-color: #9a9a9a;
+  margin: 0 10px;
+}
+
+.dashboard .tool-bar .filter .btn > a {
+  margin-left: 5px;
+  background-color: #FC8C0E;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.dashboard .statistics {
+  margin-top: 30px;
+}
+
+.dashboard .statistics .pannel-simple {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard .statistics .pannel-simple .pannel-item {
+  height: 100px;
+  width: 16%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+}
+
+.dashboard .statistics .pannel-simple .pannel-item > em {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.dashboard .statistics .pannel-bigger {
+  margin-top: 30px;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard .statistics .pannel-bigger .pannel-item {
+  width: 32%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard .statistics .pannel-bigger .pannel-item > p em {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.dashboard .statistics .charts {
+  padding: 25px;
+  margin-top: 30px;
+  background-color: #fff;
+}
+
+.dashboard .statistics .charts .cha-title {
+  height: 36px;
+  border-bottom: 1px solid #ccc;
+}
+
+.dashboard .statistics .charts .charts-content {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.orders {
+  padding: 25px;
+}
+
+.orders .table {
+  background-color: #fff;
+}
