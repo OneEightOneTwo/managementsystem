@@ -5,7 +5,7 @@ layui.use(['layer', 'table'], function () {
     table.render({
         elem: '#demo',
         height: 400,
-        url: 'http://localhost:3000/manager/manager' //数据接口
+        url: '/manager/manager' //数据接口
         , page: true //开启分页
         , toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
         , cols: [
@@ -100,7 +100,7 @@ layui.use(['layer', 'table'], function () {
                 console.log(ID);
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost:3000/delManager/delManager",
+                    url: "/delManager/delManager",
                     data: `ID=${ID}`
                 }).done((data) => {
                     console.log(data);
@@ -122,7 +122,7 @@ layui.use(['layer', 'table'], function () {
         let Time = $('#time').val() * 1;
         $.ajax({
             type: "POST",
-            url: "http://localhost:3000/addManager/addManager",
+            url: "/addManager/addManager",
             data: {
                 'ID': `${ID}`,
                 'username': `${username}`,

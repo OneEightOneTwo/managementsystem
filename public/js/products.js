@@ -5,7 +5,7 @@ layui.use('table', function () {
         elem: '#demo',
         //  toolbar: '#toolbarDemo',
         height: 351,
-        url: 'http://localhost:3000/product/product' //数据接口
+        url: '/product/product' //数据接口
             ,
         page: true, //开启分页
         

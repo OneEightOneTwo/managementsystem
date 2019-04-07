@@ -15,7 +15,7 @@ layui.use(['layer', 'table'], function () {
     table.render({
         elem: '#demo',
         height: 400,
-        url: 'http://localhost:3000/users/users' //数据接口
+        url: '/users/users' //数据接口
         , page: true //开启分页
         , toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
         , cols: [
@@ -111,7 +111,7 @@ layui.use(['layer', 'table'], function () {
                 let id = data.id;
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost:3000/delUser/delUser",
+                    url: "/delUser/delUser",
                     data: `id=${id}`
                 }).done((data) => {
                     console.log(data);
