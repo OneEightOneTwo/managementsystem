@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const router = express.Router();
-const db = require('../mongodb/db')
+const db = require('../mongodb/db-asyncv2')
 const node_xlsx = require('node-xlsx'); //解析excel文件
 const nodeExcel = require('excel-export'); //生成excel文件
 const multer = require('multer');
@@ -36,14 +36,16 @@ var upload = multer({
 });
 
 /* GET users listing. */
-router.get('/list', function (req, res, next) {
-	db.select('orders', {}, data => {
-		res.send(data);
-	})
+router.get('/list', async (req, res, next) => {
+	let data = await db.select('orders', {});
+	res.send(data);
+	// db.select('orders', {}, data => {
+	// 	res.send(data);
+	// })
 });
 
 
-router.post('/upload', upload.single('excel'), function (req, res, next) {
+router.post('/upload', upload.single('excel'), async (req, res, next) => {
 	//注1意，multer只能处理multipart/form-data数据，也就是postman里面的form-data,不是binary
 	console.log(req.body);
 	console.log(req.file);
@@ -69,48 +71,45 @@ router.post('/upload', upload.single('excel'), function (req, res, next) {
 			insertData.push(tempObj);
 		}
 
-		// console.log(insertData);
+		let data = await db.insert('orders', insertData);
+		res.send(data);
 
-		db.insert('orders', insertData, data => {
-			res.send(data);
-		})
+
+		// db.insert('orders', insertData, data => {
+		// 	res.send(data);
+		// })
 
 	}
 });
 
-router.get('/download', function (req, res, next) {
-	db.select('orders', {}, data => {
+router.get('/download', async (req, res, next) => {
+	let data = await db.select('orders', {});
+	let conf = {}; //创建一个写入格式map，其中cols(表头)，rows(每一行的数据);
+	let cols = ['_id', 'status', 'orderID', 'data', 'consignee', 'phone', 'payStyle', 'logInfo', 'orderPrice']; //手动创建表头中的内容
+	conf.cols = []; //在conf中添加cols
 
-		let conf = {}; //创建一个写入格式map，其中cols(表头)，rows(每一行的数据);
-		let cols = ['_id', 'status', 'orderID', 'data', 'consignee', 'phone', 'payStyle', 'logInfo', 'orderPrice']; //手动创建表头中的内容
-		conf.cols = []; //在conf中添加cols
+	for (let i = 0; i < cols.length; i++) {
+		let tits = {}; //创建表头数据所对应的类型,其中包括 caption内容 type类型
+		tits.caption = cols[i]; //添加内容
+		tits.type = 'string'; //添加对应类型，这类型对应数据库中的类型，入number，data但一般导出的都是转换为string类型的
+		conf.cols.push(tits); //将每一个表头加入cols中
+	}
 
-		for (let i = 0; i < cols.length; i++) {
-			let tits = {}; //创建表头数据所对应的类型,其中包括 caption内容 type类型
-			tits.caption = cols[i]; //添加内容
-			tits.type = 'string'; //添加对应类型，这类型对应数据库中的类型，入number，data但一般导出的都是转换为string类型的
-			conf.cols.push(tits); //将每一个表头加入cols中
-		}
+	let rows = [];
 
-		let rows = [];
-
-		data.dataset.forEach(col => { //遍历查询到的数据
-			let row = [];
-			cols.forEach(tit => {
-				row.push(col[tit])
-			})
-			rows.push(row);
+	data.dataList.forEach(col => { //遍历查询到的数据
+		let row = [];
+		cols.forEach(tit => {
+			row.push(col[tit])
 		})
-		conf.rows = rows; //将所有行加入rows中
-		let result = nodeExcel.execute(conf); //将所有数据写入nodeExcel中
-		// res.header('Content-Type', 'application/vnd.openxmlformats'); //设置响应头，让浏览器下载而不是打开
-		// res.setHeader('Content-Disposition', 'attachment; filename=订单' + moment(new Date().getTime()).format("YYYYMMDDhhmmss") + '.xlsx');
-		//  res.download(result);
-		// res.end(result, 'binary');
-		res.setHeader('Content-Type', 'application/vnd.openxmlformats');
-		res.setHeader("Content-Disposition", "attachment; filename=order-" + Date.now() + ".xlsx");
-		res.end(result, 'binary');
+		rows.push(row);
 	})
+	conf.rows = rows; //将所有行加入rows中
+	let result = nodeExcel.execute(conf); //将所有数据写入nodeExcel中
+	res.setHeader('Content-Type', 'application/vnd.openxmlformats');//设置响应头，让浏览器下载而不是打开
+	res.setHeader("Content-Disposition", "attachment; filename=order-" + Date.now() + ".xlsx");
+	res.end(result, 'binary');
+
 });
 
 
