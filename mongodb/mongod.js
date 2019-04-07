@@ -5,7 +5,7 @@ const {
 // Connection URL
 const url = 'mongodb://localhost:27017';
 // Database Name
-const dbName = 'Db';
+const dbName = 'myproject';
 // Use connect method to connect to the server
 
 let connect = () => {

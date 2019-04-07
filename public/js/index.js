@@ -7,42 +7,42 @@ function renderStatice(data) {
     let html1 = `
         
     <div class="pannel-item ">
-        <em>${data.dataset[0].visitorNum}</em>
+        <em>${data.dataList[0].visitorNum}</em>
         <span>访客人数</span>
     </div>
     <div class="pannel-item">
-        <em>${data.dataset[0].visitortime}</em>
+        <em>${data.dataList[0].visitortime}</em>
         <span>访客次数</span>
     </div>
     <div class="pannel-item">
-        <em>${data.dataset[0].orderNum}</em>
+        <em>${data.dataList[0].orderNum}</em>
         <span>下单人数</span>
     </div>
     <div class="pannel-item">
-        <em>${data.dataset[0].orderConfirmNum}</em>
+        <em>${data.dataList[0].orderConfirmNum}</em>
         <span>确认订单数</span>
     </div>
     <div class="pannel-item">
-        <em>${data.dataset[0].payNum}</em>
+        <em>${data.dataList[0].payNum}</em>
         <span>支付人数</span>
     </div>
     <div class="pannel-item">
-        <em>${data.dataset[0].dealNum}</em>
+        <em>${data.dataList[0].dealNum}</em>
         <span>成交订单数</span>
     </div>
 
 `;
     let html2 = `
      <div class="pannel-item" style="background:#F9B224">
-        <p><span>￥</span><em>${data.dataset[0].orderPrice}</em></p>
+        <p><span>￥</span><em>${data.dataList[0].orderPrice}</em></p>
         <span>下单金额</span>
     </div>
     <div class="pannel-item" style="background:#896ED7">
-        <p><span>￥</span><em>${data.dataset[0].dealPrice}</em></p>
+        <p><span>￥</span><em>${data.dataList[0].dealPrice}</em></p>
         <span>成交金额</span>
     </div>
     <div class="pannel-item" style="background:#33C6CD">
-        <p><span>￥</span><em>${data.dataset[0].unitPrice}</em></p>
+        <p><span>￥</span><em>${data.dataList[0].unitPrice}</em></p>
         <span>客单价</span>
     </div>
 
@@ -88,7 +88,7 @@ function echartsRender(json) {
                     color: colors[1]
                 }
             },
-            data: json.dataset[0].timeLine
+            data: json.dataList[0].timeLine
         }],
         yAxis: [{
             name: '成交额',
@@ -104,7 +104,7 @@ function echartsRender(json) {
                 xAxisIndex: 0,
                 yAxisIndex: 0,
                 smooth: true,
-                data: json.dataset[0].dealPrie
+                data: json.dataList[0].dealPrie
             },
             {
                 name: '订单数',
@@ -112,7 +112,7 @@ function echartsRender(json) {
                 xAxisIndex: 0,
                 yAxisIndex: 1,
                 smooth: true,
-                data: json.dataset[0].orders
+                data: json.dataList[0].orders
             }
         ]
     };

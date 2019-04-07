@@ -7,10 +7,11 @@ const nodeExcel = require('excel-export'); //生成excel文件
 const multer = require('multer');
 const fs = require('fs');
 const moment = require('moment');
+
 // const upload = multer({
 // 	dest: './upload'
 // });
-// const storage = multer.diskStorage({
+// const storage = multer.diskStorage({ //储存到磁盘
 // 	destination: function (req, res, cb) {
 // 		let _path = path.join(__dirname, "./upload");
 // 		if (!fs.existsSync(_path)) {
@@ -29,7 +30,7 @@ const moment = require('moment');
 // });
 
 
-var storage = multer.memoryStorage();
+var storage = multer.memoryStorage(); //储存到内存
 var upload = multer({
 	storage: storage
 });
@@ -43,7 +44,7 @@ router.get('/list', function (req, res, next) {
 
 
 router.post('/upload', upload.single('excel'), function (req, res, next) {
-	//注意，multer只能处理multipart/form-data数据，也就是postman里面的form-data,不是binary
+	//注1意，multer只能处理multipart/form-data数据，也就是postman里面的form-data,不是binary
 	console.log(req.body);
 	console.log(req.file);
 	let splitName = req.file.originalname.split('.');
