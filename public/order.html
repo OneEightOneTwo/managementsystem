@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<!-- Favicon icon -->
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png" />
+	<title>
+		Monster Admin Template - The Most Complete & Trusted Bootstrap 4 Admin
+		Template
+	</title>
+	<!-- Bootstrap Core CSS -->
+	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Custom CSS -->
+	<link href="css/style.css" rel="stylesheet" />
+	<!-- You can change the theme colors from here -->
+	<link href="css/colors/blue.css" id="theme" rel="stylesheet" />
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/add.css" />
+	<link rel="stylesheet" href="css/layouts__BasicLayout.chunk.css" />
+	<link rel="stylesheet" href="css/umi.css" />
+	<link rel="stylesheet" href="css/vendors.chunk.css" />
+	<link rel="stylesheet" href="css/dashboard.css" />
+	<link rel="stylesheet" href="http:////at.alicdn.com/t/font_1121957_bglxz024wu.css" />
+	<link rel="stylesheet" href="css/daterangepicker.min.css" />
+	<link rel="stylesheet" href="css/order.css">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+</head>
+
+<body class="fix-header fix-sidebar card-no-border">
+	<div id="main-wrapper">
+		<header class="topbar">
+			<nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">
+						<!-- Logo icon -->
+						<b>
+							<img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+						</b>
+						<!--End Logo icon -->
+						<!-- Logo text -->
+						<span>
+							<!-- dark Logo text -->
+							<img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+						</span>
+					</a>
+				</div>
+
+				<div class="navbar-collapse">
+					<ul class="navbar-nav mr-auto mt-md-0 ">
+						<!-- This is  -->
+						<li class="nav-item">
+							<a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark"
+								href="javascript:void(0)"><i class="ti-menu"></i></a>
+						</li>
+						<li class="nav-item hidden-sm-down">
+							<form class="app-search p-l-20">
+								<input type="text" class="form-control" placeholder="Search for..." />
+								<a class="srh-btn"><i class="ti-search"></i></a>
+							</form>
+						</li>
+					</ul>
+					<ul class="navbar-nav my-lg-0">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+									src="assets/images/users/1.jpg" alt="user" class="profile-pic m-r-5" />Markarn
+								Doe</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<aside class="left-sidebar">
+			<!-- Sidebar scroll-->
+			<div class="scroll-sidebar">
+				<!-- Sidebar navigation-->
+				<nav class="sidebar-nav">
+					<ul id="sidebarnav">
+						<li id="page1">
+							<a href="/index.html" class="waves-effect"><i class="fa fa-clock-o m-r-10"
+									aria-hidden="true"></i>首页</a>
+						</li>
+
+						<li id="user">
+							<a href="###" class="waves-effect"><i class="fa fa-user m-r-10"
+									aria-hidden="true"></i>用户</a>
+						</li>
+						<!-- 下拉菜单 用户 -> 网站用户  + 后台管理员 -->
+
+						<div class="sub_sidebarnav1">
+							<p class="sub_sidebarnav1t"><a href="###">网站用户</a></p>
+							<p class="sub_sidebarnav1b"><a href="###">后台管理员</a></p>
+						</div>
+
+						<li id="products">
+							<a href="###" class="waves-effect"><i class="fa fa-table m-r-10"
+									aria-hidden="true"></i>商品管理</a>
+						</li>
+						<!-- 商品  -> 商品列表 + 添加商品 -->
+						<div class="sub_sidebarnav2">
+							<p class="sub_sidebarnav2t"><a href="###">商品列表</a></p>
+							<p class="sub_sidebarnav2b"><a href="###">添加商品</a></p>
+						</div>
+						<li id="orders">
+							<a href="javascript:;" class="waves-effect"><i class="fa fa-font m-r-10"
+									aria-hidden="true"></i>订单管理</a>
+						</li>
+					</ul>
+					<!-- <div class="text-center m-t-30">
+												<a href="#" class="btn btn-danger">Download Here</a>
+										</div> -->
+				</nav>
+				<!-- End Sidebar navigation -->
+			</div>
+			<!-- End Sidebar scroll-->
+		</aside>
+
+		<div class="page-wrapper">
+			<!-- 订单管理 -->
+			<div class="container-fluid orders">
+				<div class="title clearfix">
+					<div class="upload fl">
+						<input type="button" id="btn" value="导入">
+						<input type="file" id="file">
+					</div>
+					<div class="download fr">
+						导出
+					</div>
+				</div>
+				<div class="tabel">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>订单状态</th>
+								<th>订单编号</th>
+								<th>下单时间</th>
+								<th>收货人</th>
+								<th>联系电话</th>
+								<th>支付方式</th>
+								<th>物流状态</th>
+								<th>订单金额</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>已完成</td>
+								<td>1111</td>
+								<td>2018-03-18</td>
+								<td>阿三</td>
+								<td>1814564651</td>
+								<td>微信支付</td>
+								<td>已签收</td>
+								<td>119.50</td>
+							</tr>
+							<tr>
+								<td>已完成</td>
+								<td>1112</td>
+								<td>2018-03-18</td>
+								<td>阿三</td>
+								<td>1814564651</td>
+								<td>微信支付</td>
+								<td>已签收</td>
+								<td>119.50</td>
+							</tr>
+							<tr>
+								<td>已完成</td>
+								<td>1112</td>
+								<td>2018-03-18</td>
+								<td>阿三</td>
+								<td>1814564651</td>
+								<td>微信支付</td>
+								<td>已签收</td>
+								<td>119.50</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="assets/plugins/jquery/jquery.min.js"></script>
+	<script src="js/order.js"></script>
+</body>
+</html>

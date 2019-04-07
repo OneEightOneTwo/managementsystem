@@ -1,15 +1,23 @@
 .page-wrapper{
     position: relative;
 }
-.container-fluid1,.container-fluid2{
-    max-width: 1200px;
+.container-fluid2t,.container-fluid2b,.container-fluid3t,.container-fluid3b{
+    width: 1000px;
     overflow:hidden;
     /* display: none; */
     /* position:absolute;
     top: 0;
     left: 0; */
 }
-
+.container-fluid1,
+.container-fluid4{
+    width: 100%;
+    overflow:hidden;
+    display: none;
+    position:absolute;
+    top: 0;
+    left: 0;
+}
 .sub_sidebarnav1,.sub_sidebarnav2{
     display: none;
 }
